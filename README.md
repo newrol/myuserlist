@@ -1,2 +1,2 @@
 # myuserlist
-Simple mean.js example:
+Simple mean.js example.
