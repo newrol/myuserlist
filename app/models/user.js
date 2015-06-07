@@ -6,29 +6,27 @@ var dbSchema   = require(properties.path + 'app/db/dbSchema')
 var User = mongoose.model('user', dbSchema.userSchema); 
 
 	User.prototype.setNick = function(userNick){
-		this.title = opportunityTittle;
+		this.nick = userNick;
 	};
 	
 	User.prototype.setName = function(userName){
-		this.header = opportunityHeader;
+		this.name = userName;
 	};
 
 	User.prototype.setSurname = function(userSurname){
-		this.body = opportunityHeader;
+		this.surname = userSurname;
 	};
-
 
 	User.prototype.setMail = function(userMail){
-		this.photoPath = opportunityPhotoPath;
+		this.mail = userMail;
 	};
-
 
 	//El id lo podremos obtener pero dejaros que mongoose trate con el
 	User.prototype.getId = function(){
 		return this._id;
 	}
 
-	user.prototype.getNick = function(){
+	User.prototype.getNick = function(){
 		return this.nick;
 	}
 

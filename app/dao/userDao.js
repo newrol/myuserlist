@@ -1,10 +1,10 @@
 var properties = require('properties').properties;      // Import properties file
-var UserModel = require(properties.path + 'app/src/models/user').User;      // Import Oportunity model.
+var UserModel = require(properties.path + 'app/models/user').User;      // Import Oportunity model.
 
 /*
   Function userDao constructor.
 */
-function userDao(){
+function UserDao(){
 
   
   this.create = function(user, callback){
@@ -55,4 +55,4 @@ function userDao(){
     });
   };
 }
-exports.userDao = userDao
+exports.UserDao = UserDao
