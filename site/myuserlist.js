@@ -22,8 +22,26 @@ app.use( bodyParser.json() );
 
 //add middleware apiOptions:
 app.use(rest.rester(apiOptions));
-
+//Importo las rutas hacia la api:	
 require(properties.path + 'api/index')(rest);
+
+app.use(express["static"](__dirname + '/public'));
+
+//web route
+
+app.get('/',function(req, res){
+	res.sendFile(properties.path + 'site/public/views/controlPanel.html');
+});
+
+
+app.get('/lib',function(req, res){
+	res.sendFile(properties.path + 'site/public/lib');
+});
+
+
+app.get('/styles',function(req, res){
+	res.sendFile(properties.path + 'site/public/styles');
+});
 
 // custom 404 page.
 app.use(function(req, res){
