@@ -34,6 +34,11 @@ app.get('/',function(req, res){
 });
 
 
+app.get('/create-user',function(req, res){
+	res.sendFile(properties.path + 'site/public/views/create-user.html');
+});
+
+
 app.get('/lib',function(req, res){
 	res.sendFile(properties.path + 'site/public/lib');
 });
@@ -41,6 +46,11 @@ app.get('/lib',function(req, res){
 
 app.get('/styles',function(req, res){
 	res.sendFile(properties.path + 'site/public/styles');
+});
+
+
+app.get('/controllers',function(req, res){
+	res.sendFile(properties.path + 'site/public/controllers');
 });
 
 // custom 404 page.
