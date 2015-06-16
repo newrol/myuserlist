@@ -1,6 +1,7 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngAnimate', 'ngTouch','ui.grid']);
 
-app.directive('createUser', ['$http', function(){
+
+app.directive('createUser', ['$http', function($scope){
 	// Runs during compile
 	return {
 		restrict: 'E',
@@ -24,4 +25,13 @@ app.directive('createUser', ['$http', function(){
  			};
 		}
 	};
+}]);
+
+
+app.controller('MainCtrl', ['$scope', '$http', function($scope, $http, uiGridConstants){
+
+    $http.get('http://localhost:3000/api/allUsers')
+        .success(function(data){
+ 	  $scope.userData = data;
+ 	});  
 }]);

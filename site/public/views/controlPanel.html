@@ -1,13 +1,23 @@
 <!doctype html>
 <html ng-app="app">
   <head>
-       <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css">        
+      <link rel="stylesheet" href="/styles/main.css" type="text/css">
+      <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css">        
+        <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css">
       <script src="/lib/jquery-1.11.3.min.js"></script> 
       <script src="/lib/bootstrap.min.js"></script>
       <script src="/lib/angular.min.js"></script>
-      <script src="/controllers/controlPanelController.js"></script> 
+      <script src="http://ui-grid.info/release/ui-grid-unstable.js"></script>
+      <script src="/controllers/controlPanelController.js"></script>  
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+    
+
   </head>
   <body>
-    <create-user></create-user>
+     <div ng-controller="MainCtrl">
+    <create-user></create-user>    
+      <div id="userGrid" ui-grid="{data : userData}" class="grid"></div>
+    </div>
   </body>
 </html>
